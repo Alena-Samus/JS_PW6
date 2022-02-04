@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Использование функции splice</title>
+</head>
+
+<body>
+  <script>
+    //Исходный массив
+    const arrayFirst = [1, 2, 3, 4, 5];
+    document.write(`Создание нового массива, используя функцию splice<br>Исходный массив: ${arrayFirst}<br>`);
+
+  
+    arrayFirst.splice(5, 0,'e');
+    arrayFirst.splice(4, 0, 'c');
+    arrayFirst.splice(1, 0, 'a', 'b');
+
+    //Вывод в окно браузера нового массива 
+    document.write(`Преобразованный массив: ${arrayFirst}`);
+  </script>
+</body>
+
+</html>
