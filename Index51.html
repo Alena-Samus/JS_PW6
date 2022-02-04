@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Использование функции slice</title>
+  <title>Использование функции sort</title>
 </head>
 <body>
   <script>
-    const arrayFirst = [1, 2, 3, 4, 5];
-    const arraySecond = arrayFirst.slice(3);//Берем с 3 позиции все элементы
-    document.write(`Создание нового массива при помощи функции slice<br>Исходный массив: ${arrayFirst}<br> Новый массив, созданный из элементов исходного массива: ${arraySecond}`);
+    const arrayFirst = ['a', 'b', 'c', 'b', 'a'];
+    document.write(`Удаление повторяющихся элементов, используя функцию sort<br>Исходный массив: ${arrayFirst}<br>`);    
+    arrayFirst.sort();//Сортировка массива
+    document.write(`Исходный отсортированный массив: ${arrayFirst}<br>`);
+    //Поиск в цикле повторяющиъся элементов
+    for (let i = 0; i < arrayFirst.length; i++){
+     if (arrayFirst[i + 1] == arrayFirst[i])
+      arrayFirst.splice(i,1);//удаление повторяющегося элемента
+    }
+    //Вывод в окно браузера массива после удаления повторяющихся элементов
+    document.write(`Массив после удаления повторяющихся элементов: ${arrayFirst}`);
   </script>
 </body>
 </html>
