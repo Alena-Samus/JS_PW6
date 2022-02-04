@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Использование функции slice</title>
+</head>
+<body>
+  <script>
+    const arrayFirst = [1, 2, 3, 4, 5];
+    const arraySecond = arrayFirst.slice(0,3);//Берем с 0 позиции 3 элемента и копируем их в массив arraySecond
+    document.write(`Создание нового массива при помощи функции slice<br>Исходный массив: ${arrayFirst}<br> Новый массив, созданный из первых трех элементов исходного массива; ${arraySecond}`);
+  </script>
+</body>
+</html>
