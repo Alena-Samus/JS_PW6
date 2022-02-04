@@ -7,6 +7,26 @@
   <title>Пример 2 с массивами</title>
 </head>
 <body>
-  
+  <script>
+    //Функция для реверса массива
+    const reverse = (array) => {
+      const reversed = [];
+      for (let i = array.length - 1; i >= 0; i -= 1){
+        reversed.push(array[i]);
+      }
+      return reversed
+    };
+    //Ввод массива пользователем
+    const data = [];
+    let currentElement;
+    do {
+      currentElement = prompt(`Введите ${data.length + 1} элемент массива`)//вводим новый элемент
+      data.push(currentElement);//добавляем новый элемент в конец очереди
+    } while (currentElement != null);//цикл выполняется до тех пор, пока пользователь нажимает кнопку "ОК"
+    data.pop();
+
+    //Вывод на экран исходного массива и результата реверса
+    document.write(`Вы ввели массив состоящий из ${data.length} элементов.<br>Исходный массив: ${data}<br>Перевернутый массив: ${reverse(data)}`);
+  </script>
 </body>
 </html>
