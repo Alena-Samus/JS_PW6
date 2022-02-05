@@ -38,9 +38,9 @@
     } while (!validationDate(numb));
 
     document.write(`Вы ввели ${numb}.<br>`);
-
+ 
     //Вывод результата расчета в окно браузера
-    if (fibonacci(numb) == Infinity)
+    if (numb.length > 4 || fibonacci(numb) == Infinity)
       document.write (`Число Фибоначчи для ${numb} посчитать и отобразить невозможно, т.к. результат слишком большой.`)
     else
      document.write(`Число Фибоначчи для ${numb} равно ${fibonacci(numb)}<br>`);
