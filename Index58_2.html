@@ -19,7 +19,11 @@
     const secondArray = firstArray.filter((elem) => elem >= 99);
 
     //Вывод результатов в окно браузера
-    document.write(`Создание отфильтрованного массива<br>Введенный массив: ${firstArray}<br>Отфильтрованный массив ${secondArray}`);
+    document.write(`Создание отфильтрованного массива все элементы которого больше или равны 99<br>Введенный массив: ${firstArray}<br>`);
+    if(secondArray.length > 1)
+      document.write(`Отфильтрованный массив ${secondArray}`);
+    else
+      document.write(`Отфильтрованный массив не содержит элементов больших или равных 99`);
   </script>
 </body>
 </html>
