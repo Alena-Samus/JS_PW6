@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Фильтрация массива</title>
+  <title>Удаление из массива</title>
 </head>
 <body>
   <script>
@@ -12,14 +12,22 @@
     let srt = prompt('Введите элементы массива через запятую');
 
     //Преобразование введенной строки в массив
-    //.replace(/^\[([\s\S]*)]$/, '$1') - регулярное выражение для удаления квадратных скобок в начале и в конце строки, если пользователь их ввел
+
     const firstArray = srt.replace(/^\[([\s\S]*)]$/, '$1').split(',');
-
-    //Фильтрация исходного массива и создание нового с результатом фильтрации
-   // const secondArray = firstArray.filter((elem) => elem >= 99);
-
+    document.write(`Удаление повторяющегося значения в массиве<br>Введенный массив: ${firstArray}<br> `);
+   
+    //Функция для удаления повторяющихся значений
+    const del = (curArray) =>
+    {
+       curArray.sort();
+       for (let i = 0; i < curArray.length; i++) {
+         if (curArray[i + 1] == curArray[i]);
+           curArray.splice(i, 1);
+        }
+           return curArray;
+     }
     //Вывод результатов в окно браузера
-    document.write(`Создание отфильтрованного массива<br>Введенный массив: ${firstArray}<br>Отфильтрованный массив ${secondArray}`);
+    document.write(`Массив после удаления повторяющихся значений: ${del(firstArray)}<br>`);
   </script>
 </body>
 </html>
