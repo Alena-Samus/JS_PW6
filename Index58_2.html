@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фильтрация массива</title>
+</head>
+<body>
+  <script>
+    //Окно для ввода элементов массива одной строкой
+    let srt = prompt('Введите элементы массива через запятую');
+
+    //Преобразование введенной строки в массив
+    //.replace(/^\[([\s\S]*)]$/, '$1') - регулярное выражение для удаления квадратных скобок в начале и в конце строки, если пользователь их ввел
+    const firstArray = srt.replace(/^\[([\s\S]*)]$/, '$1').split(',');
+
+    //Фильтрация исходного массива и создание нового с результатом фильтрации
+    const secondArray = firstArray.filter((elem) => elem >= 99);
+
+    //Вывод результатов в окно браузера
+    document.write(`Создание отфильтрованного массива<br>Введенный массив: ${firstArray}<br>Отфильтрованный массив ${secondArray}`);
+  </script>
+</body>
+</html>
