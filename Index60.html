@@ -8,26 +8,40 @@
 </head>
 <body>
   <script>
-    //Окно для ввода числа
-    let numb = prompt('Введите целое положительное число, для которого необходимо вычислить число Фибоначчи');
-    document.write(`Вы ввели ${numb}.<br>`);
    
    
-    //Функция для вычисления числа Фибоначчи
-   const fibonacci = (numbFib) =>{
+   //функция для валидации данных
+    function validationDate(valid) {
+      if (isNaN(+valid) || valid.replace(/\s+/g, '') == '' || valid < 0) {
+        alert('Вы ввели некорректные данные!\nВведите целое положительное число!')
+        return 0
+      }
+      else return 1;
+    }
+  //Функция для вычисления числа Фибоначчи
+    const fibonacci = (numbFib) => {
       const fibArray = [];
       fibArray[0] = 0;
       fibArray[1] = 1;
-      for (let i = 2; i <= numbFib; i++){
-        fibArray[i] = fibArray[i - 2] + fibArray[i - 1];
-      }     
-
+        for (let i = 2; i <= numbFib; i++) {
+          fibArray[i] = fibArray[i - 2] + fibArray[i - 1];
+        }
       return (fibArray[numbFib]);
-    }
+      }
+    
+    
+    let numb;
+
+    do {
+      //Ввод числа пользователем
+      numb = prompt('Введите целое положительное число, для которого необходимо вычислить число Фибоначчи');
+    } while (!validationDate(numb));
+
+    document.write(`Вы ввели ${numb}.<br>`);
 
     //Вывод результата расчета в окно браузера
     if (fibonacci(numb) == Infinity)
-      document.write (`Число Фибоначчи для ${numb} посчитать и отобразить невозможно, т.к. оно слишком большое.`)
+      document.write (`Число Фибоначчи для ${numb} посчитать и отобразить невозможно, т.к. результат слишком большой.`)
     else
      document.write(`Число Фибоначчи для ${numb} равно ${fibonacci(numb)}<br>`);
   </script>
