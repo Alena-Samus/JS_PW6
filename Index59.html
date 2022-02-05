@@ -17,15 +17,7 @@
     document.write(`Удаление повторяющегося значения в массиве<br>Введенный массив: ${firstArray}<br> `);
    
     //Функция для удаления повторяющихся значений
-    const del = (curArray) =>
-    {
-       curArray.sort();
-       for (let i = 0; i < curArray.length; i++) {
-         if (curArray[i + 1] == curArray[i]);
-           curArray.splice(i, 1);
-        }
-           return curArray;
-     }
+    const del = (curArray) =>[...new Set(curArray)];
     //Вывод результатов в окно браузера
     document.write(`Массив после удаления повторяющихся значений: ${del(firstArray)}<br>`);
   </script>
