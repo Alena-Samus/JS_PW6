@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вычисление числа Фибоначчи</title>
+</head>
+<body>
+  <script>
+    //Окно для ввода числа
+    let numb = prompt('Введите целое положительное число, для которого необходимо вычислить число Фибоначчи');
+    document.write(`Вы ввели ${numb}.<br>`);
+   
+   
+    //Функция для вычисления числа Фибоначчи
+   const fibonacci = (numbFib) =>{
+      const fibArray = [];
+      fibArray[0] = 0;
+      fibArray[1] = 1;
+      for (let i = 2; i <= numbFib; i++){
+        fibArray[i] = fibArray[i - 2] + fibArray[i - 1];
+      }     
+
+      return (fibArray[numbFib]);
+    }
+
+    //Вывод результата расчета в окно браузера
+    if (fibonacci(numb) == Infinity)
+      document.write (`Число Фибоначчи для ${numb} посчитать и отобразить невозможно, т.к. оно слишком большое.`)
+    else
+     document.write(`Число Фибоначчи для ${numb} равно ${fibonacci(numb)}<br>`);
+  </script>
+</body>
+</html>
