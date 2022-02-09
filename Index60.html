@@ -11,7 +11,7 @@
    
    
    //функция для валидации данных
-    function validationDate(valid) {
+    function validationData(valid) {
       if (isNaN(+valid) || valid.replace(/\s+/g, '') == '' || valid < 0) {
         alert('Вы ввели некорректные данные!\nВведите целое положительное число!')
         return 0
@@ -35,7 +35,7 @@
     do {
       //Ввод числа пользователем
       numb = prompt('Введите целое положительное число, для которого необходимо вычислить число Фибоначчи');
-    } while (!validationDate(numb));
+    } while (!validationData(numb));
 
     document.write(`Вы ввели ${numb}.<br>`);
  
